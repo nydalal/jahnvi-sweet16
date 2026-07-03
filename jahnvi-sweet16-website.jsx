@@ -41,7 +41,7 @@ const JahnviSweetSixteen = () => {
     { id: 3, speaker: 'Aunt/Uncle', title: 'Family Wishes' },
     { id: 4, speaker: 'Close Friend', title: 'Friendship Tribute' },
     { id: 5, speaker: 'Grandparent', title: 'Wisdom & Blessings' },
-    { id: 6, speaker: 'Brother/Sister', title: 'Sibling's Perspective' },
+    { id: 6, speaker: 'Brother/Sister', title: "Sibling's Perspective" },
     { id: 7, speaker: 'Best Friend', title: 'Special Message' },
     { id: 8, speaker: 'Family Member', title: 'Celebratory Toast' }
   ];
