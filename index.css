@@ -1,0 +1,90 @@
+@import url('https://cdn.jsdelivr.net/npm/tailwindcss@3.3.6/tailwind.min.css');
+
+@layer base {
+  * {
+    @apply transition-colors;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-gray-950 text-white font-sans;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-amber-200 via-pink-300 to-purple-300 bg-clip-text text-transparent;
+  }
+  
+  .glass-card {
+    @apply bg-gradient-to-br from-purple-500/20 to-purple-700/20 rounded-xl border border-purple-500/30 backdrop-blur-sm;
+  }
+  
+  .luxury-border {
+    @apply border border-purple-500/30;
+  }
+}
+
+/* Smooth animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes shimmer {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(88, 28, 135, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(217, 119, 6, 0.5);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(217, 119, 6, 0.8);
+}
+
+/* Custom shadow for depth */
+.shadow-luxury {
+  box-shadow: 0 20px 50px rgba(139, 92, 246, 0.15);
+}
+
+/* Responsive fixes */
+@media (max-width: 768px) {
+  .text-7xl {
+    font-size: 3rem;
+  }
+  
+  .text-5xl {
+    font-size: 2rem;
+  }
+}
