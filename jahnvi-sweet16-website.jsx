@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Sparkles, Heart, Music, Laugh } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Sparkles, Heart } from 'lucide-react';
 
 const JahnviSweetSixteen = () => {
   const [activeGalleryIndex, setActiveGalleryIndex] = useState(0);
@@ -67,38 +67,25 @@ const JahnviSweetSixteen = () => {
 
   return (
     <div className="w-full bg-purple-950 text-white overflow-hidden">
-      {/* HERO SECTION */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-        {/* Background with gold flower pattern */}
-        <div className="absolute inset-0 opacity-15" style={{
-          backgroundImage: `url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="100" cy="100" r="40" fill="%23d97706" opacity="0.3"/><circle cx="100" cy="100" r="30" fill="%23f59e0b" opacity="0.5"/></svg>')`,
-          backgroundSize: '300px 300px'
-        }}></div>
-
-        {/* Gradient overlays */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-600 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-float"></div>
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-amber-600 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-float" style={{ animationDelay: '2s' }}></div>
-        </div>
+      {/* HERO SECTION WITH GOLD FLOWERS BACKGROUND */}
+      <section 
+        className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
+        style={{
+          backgroundImage: `url('https://res.cloudinary.com/ygcsdi8i/image/upload/f_auto,q_auto/openart-54b4d96b3de74c2f98aa81cd47ea8529_raw_1779336058138_90f176ea_1_yg4g1g')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        {/* Overlay for text readability */}
+        <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+        
+        {/* Gradient overlay for premium feel */}
+        <div className="absolute inset-0 bg-gradient-to-b from-purple-900/30 via-transparent to-purple-950/50"></div>
 
         <div className="relative z-10 text-center max-w-4xl px-4 md:px-8 animate-slideIn">
-          {/* Logo/Image placeholder with gold flowers aesthetic */}
-          <div className="mb-8 flex justify-center">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-purple-600 rounded-full blur-2xl opacity-50"></div>
-              <div className="relative bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 p-1 rounded-full">
-                <div className="bg-purple-950 rounded-full p-6 group cursor-pointer hover:scale-105 transition-transform">
-                  {/* Gold Flower Icon */}
-                  <div className="relative w-16 h-16 flex items-center justify-center">
-                    <div className="absolute text-5xl animate-pulse">🌼</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
           {/* Main heading */}
-          <h1 className="text-6xl md:text-8xl font-playfair font-black mb-6 leading-tight">
+          <h1 className="text-6xl md:text-8xl font-playfair font-black mb-6 leading-tight drop-shadow-lg">
             <span className="gradient-text">Jahnvi's</span>
             <br />
             <span className="gradient-text">Sweet Sixteen</span>
@@ -106,13 +93,13 @@ const JahnviSweetSixteen = () => {
 
           {/* Date and details */}
           <div className="space-y-4 mb-12">
-            <p className="text-xl md:text-2xl text-amber-300 font-light">June 28, 2026</p>
-            <p className="text-lg text-purple-200">Fremont, California</p>
-            <p className="text-purple-300 text-sm md:text-base font-light italic">Love • Laughter • Blessings • Memories</p>
+            <p className="text-xl md:text-2xl text-amber-300 font-light drop-shadow">June 28, 2026</p>
+            <p className="text-lg text-purple-100 drop-shadow">Fremont, California</p>
+            <p className="text-purple-200 text-sm md:text-base font-light italic drop-shadow">Love • Laughter • Blessings • Memories</p>
           </div>
 
           {/* CTA Button */}
-          <button className="px-8 py-3 bg-gradient-to-r from-amber-500 to-amber-600 text-purple-950 font-bold rounded-lg hover:shadow-lg hover:shadow-amber-500/50 transition-all duration-300 inline-block">
+          <button className="px-8 py-3 bg-gradient-to-r from-amber-500 to-amber-600 text-purple-950 font-bold rounded-lg hover:shadow-lg hover:shadow-amber-500/50 transition-all duration-300 inline-block drop-shadow-lg">
             Explore the Celebration ↓
           </button>
         </div>
@@ -120,8 +107,8 @@ const JahnviSweetSixteen = () => {
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20">
           <div className="flex flex-col items-center gap-2 animate-bounce">
-            <span className="text-sm text-amber-300">Scroll to explore</span>
-            <div className="w-6 h-10 border-2 border-amber-400 rounded-full flex justify-center p-2">
+            <span className="text-sm text-amber-300 drop-shadow">Scroll to explore</span>
+            <div className="w-6 h-10 border-2 border-amber-400 rounded-full flex justify-center p-2 drop-shadow">
               <div className="w-1 h-2 bg-amber-400 rounded-full animate-pulse"></div>
             </div>
           </div>
