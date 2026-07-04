@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Play, Sparkles, Heart } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Sparkles, Heart, Music, Laugh } from 'lucide-react';
 
 const JahnviSweetSixteen = () => {
   const [activeGalleryIndex, setActiveGalleryIndex] = useState(0);
@@ -53,11 +53,11 @@ const JahnviSweetSixteen = () => {
     { name: 'Guest', message: '👑 The elegance and warmth was unforgettable.' }
   ];
 
-  const stats = [
-    { number: '120', label: 'Guests', emoji: '👥' },
-    { number: '200+', label: 'Photos', emoji: '📸' },
-    { number: '12', label: 'Performances', emoji: '💃' },
-    { number: '8', label: 'Speeches', emoji: '💬' }
+  const celebrationElements = [
+    { icon: '❤️', title: 'Love', description: 'From family and friends who cherish you' },
+    { icon: '😄', title: 'Laughter', description: 'Joy and happiness throughout the evening' },
+    { icon: '✨', title: 'Blessings', description: 'Wishes for a beautiful future' },
+    { icon: '📸', title: 'Memories', description: '200+ moments frozen in time' }
   ];
 
   const nextGallery = () => setActiveGalleryIndex((prev) => (prev + 1) % Math.ceil(galleryPhotos.length / 4));
@@ -69,20 +69,29 @@ const JahnviSweetSixteen = () => {
     <div className="w-full bg-purple-950 text-white overflow-hidden">
       {/* HERO SECTION */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-        {/* Background effects */}
+        {/* Background with gold flower pattern */}
+        <div className="absolute inset-0 opacity-15" style={{
+          backgroundImage: `url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="100" cy="100" r="40" fill="%23d97706" opacity="0.3"/><circle cx="100" cy="100" r="30" fill="%23f59e0b" opacity="0.5"/></svg>')`,
+          backgroundSize: '300px 300px'
+        }}></div>
+
+        {/* Gradient overlays */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-600 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-float"></div>
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-amber-600 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-float" style={{ animationDelay: '2s' }}></div>
         </div>
 
         <div className="relative z-10 text-center max-w-4xl px-4 md:px-8 animate-slideIn">
-          {/* Play button */}
+          {/* Logo/Image placeholder with gold flowers aesthetic */}
           <div className="mb-8 flex justify-center">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-purple-600 rounded-full blur-2xl opacity-50"></div>
-              <div className="relative bg-gradient-to-r from-amber-500 to-purple-600 p-1 rounded-full">
+              <div className="relative bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 p-1 rounded-full">
                 <div className="bg-purple-950 rounded-full p-6 group cursor-pointer hover:scale-105 transition-transform">
-                  <Play className="w-12 h-12 text-white group-hover:scale-110 transition-transform" fill="white" />
+                  {/* Gold Flower Icon */}
+                  <div className="relative w-16 h-16 flex items-center justify-center">
+                    <div className="absolute text-5xl animate-pulse">🌼</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -99,7 +108,7 @@ const JahnviSweetSixteen = () => {
           <div className="space-y-4 mb-12">
             <p className="text-xl md:text-2xl text-amber-300 font-light">June 28, 2026</p>
             <p className="text-lg text-purple-200">Fremont, California</p>
-            <p className="text-purple-300 text-sm md:text-base">120 Guests • 12 Performances • 8 Speeches • Countless Memories</p>
+            <p className="text-purple-300 text-sm md:text-base font-light italic">Love • Laughter • Blessings • Memories</p>
           </div>
 
           {/* CTA Button */}
@@ -119,24 +128,24 @@ const JahnviSweetSixteen = () => {
         </div>
       </section>
 
-      {/* BY THE NUMBERS */}
+      {/* EVENING'S ESSENCE */}
       <section className="py-24 px-4 md:px-8 relative">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-5xl md:text-6xl font-playfair font-black text-center mb-20 gradient-text">
-            By The Numbers
+            The Evening's Essence
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {stats.map((stat, i) => (
+            {celebrationElements.map((element, i) => (
               <div
                 key={i}
                 className="group relative"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-amber-500/20 to-purple-600/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur"></div>
-                <div className="relative bg-gradient-to-br from-purple-800/30 to-purple-900/30 backdrop-blur-lg border border-purple-700/30 rounded-2xl p-6 hover:border-amber-500/50 transition-all duration-300 text-center">
-                  <div className="text-4xl mb-2">{stat.emoji}</div>
-                  <div className="text-5xl font-playfair font-black text-amber-300 mb-2">{stat.number}</div>
-                  <div className="text-purple-200 text-lg">{stat.label}</div>
+                <div className="relative bg-gradient-to-br from-purple-800/30 to-purple-900/30 backdrop-blur-lg border border-purple-700/30 rounded-2xl p-8 hover:border-amber-500/50 transition-all duration-300 text-center h-full">
+                  <div className="text-6xl mb-4">{element.icon}</div>
+                  <div className="text-3xl font-playfair font-bold text-amber-300 mb-2">{element.title}</div>
+                  <div className="text-purple-200 text-sm">{element.description}</div>
                 </div>
               </div>
             ))}
@@ -347,7 +356,7 @@ const JahnviSweetSixteen = () => {
           </p>
 
           <p className="text-lg text-purple-300 mb-12 leading-relaxed">
-            120 guests, 200+ photographs, 12 unforgettable performances, and 8 heartfelt speeches
+            A celebration filled with love, laughter, blessings, and beautiful memories
           </p>
 
           <div className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl mb-12">
