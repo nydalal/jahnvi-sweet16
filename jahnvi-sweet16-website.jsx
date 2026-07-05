@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Sparkles, Heart } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Sparkles, Heart, Play } from 'lucide-react';
 
 const JahnviSweetSixteen = () => {
   const [activeGalleryIndex, setActiveGalleryIndex] = useState(0);
   const [activePerformanceIndex, setActivePerformanceIndex] = useState(0);
+  const [activeJourneyIndex, setActiveJourneyIndex] = useState(0);
   const [scrollY, setScrollY] = useState(0);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
 
@@ -12,6 +13,22 @@ const JahnviSweetSixteen = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Journey photos - Childhood to 16
+  const journeyPhotos = [
+    { id: 1, title: 'Early Years', image: 'https://drive.google.com/uc?export=view&id=1CggcofhgDAA1sqeZ08qLnti-tj0uKkju' },
+    { id: 2, title: 'Growing Up', image: 'https://drive.google.com/uc?export=view&id=1SQaEnFqxElsab5Hxxtv0054iisJnWwC1' },
+    { id: 3, title: 'Artistic Journey', image: 'https://drive.google.com/uc?export=view&id=1ACkj4Zt6nAzoAkjg4LJ_nZUTLW3OV4vu' },
+    { id: 4, title: 'Strength & Grace', image: 'https://drive.google.com/uc?export=view&id=1Zw7eFCOUnOmDfzepbqe1stxFDIjSZKPk' },
+    { id: 5, title: 'Blossoming', image: 'https://drive.google.com/uc?export=view&id=1-F9VW2mE2BsAF-rK9iXUXCstMfICXDVS' },
+    { id: 6, title: 'Teen Years', image: 'https://drive.google.com/uc?export=view&id=157_zv5QKJOpc0NffcwCWY7_Cn5OtIlbQ' },
+    { id: 7, title: 'Confident & Radiant', image: 'https://drive.google.com/uc?export=view&id=1lkzTAdFYNnjhpoRXt-JPtckhXw4v93gx' },
+    { id: 8, title: 'The Dancer', image: 'https://drive.google.com/uc?export=view&id=1uzzwtvHEW5n2BAlQx2WaOgUaxkZ_7DqY' },
+    { id: 9, title: 'Milestones', image: 'https://drive.google.com/uc?export=view&id=1mtqlM13bsqUS9EXqhTTOm4oZsbxkREQx' },
+    { id: 10, title: 'Nearly There', image: 'https://drive.google.com/uc?export=view&id=1qjVdrsuEsg-lPwzFASnHAdYu9uxN5VE7' },
+    { id: 11, title: 'Sweet 16 Beauty', image: 'https://drive.google.com/uc?export=view&id=1phTSCruHFOgvlq6EgNIV35wJDZl6HbQ3' },
+    { id: 12, title: 'Ready to Shine', image: 'https://drive.google.com/uc?export=view&id=1eSP3IdgNGNLtIJxEL2TN1TLhlKQim7xp' }
+  ];
 
   const galleryPhotos = Array.from({ length: 20 }, (_, i) => ({
     id: i,
@@ -64,6 +81,8 @@ const JahnviSweetSixteen = () => {
   const prevGallery = () => setActiveGalleryIndex((prev) => (prev - 1 + Math.ceil(galleryPhotos.length / 4)) % Math.ceil(galleryPhotos.length / 4));
   const nextPerformance = () => setActivePerformanceIndex((prev) => (prev + 1) % performances.length);
   const prevPerformance = () => setActivePerformanceIndex((prev) => (prev - 1 + performances.length) % performances.length);
+  const nextJourney = () => setActiveJourneyIndex((prev) => (prev + 1) % journeyPhotos.length);
+  const prevJourney = () => setActiveJourneyIndex((prev) => (prev - 1 + journeyPhotos.length) % journeyPhotos.length);
 
   return (
     <div className="w-full bg-purple-950 text-white overflow-hidden">
@@ -110,6 +129,129 @@ const JahnviSweetSixteen = () => {
             <span className="text-sm text-amber-300 drop-shadow">Scroll to explore</span>
             <div className="w-6 h-10 border-2 border-amber-400 rounded-full flex justify-center p-2 drop-shadow">
               <div className="w-1 h-2 bg-amber-400 rounded-full animate-pulse"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* TRAILER VIDEO */}
+      <section className="py-24 px-4 md:px-8 relative bg-gradient-to-b from-purple-900/20 to-transparent">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-5xl md:text-6xl font-playfair font-black text-center mb-12 gradient-text">
+            The Trailer
+          </h2>
+          
+          <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl shadow-purple-900">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/OHLJhJt1oXs"
+              title="Jahnvi Sweet 16 - Trailer"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full"
+            ></iframe>
+          </div>
+
+          <p className="text-center text-purple-300 mt-6 italic">Before her magical entry with Mahaksh</p>
+        </div>
+      </section>
+
+      {/* ABOUT JAHNVI */}
+      <section className="py-24 px-4 md:px-8 relative">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-5xl md:text-6xl font-playfair font-black text-center mb-12 gradient-text">
+            About Jahnvi
+          </h2>
+
+          <div className="bg-gradient-to-br from-purple-800/30 to-purple-900/30 backdrop-blur-lg border border-purple-700/30 rounded-2xl p-8 md:p-12">
+            <p className="text-lg md:text-xl text-purple-100 leading-relaxed mb-6">
+              Jahnvi is a remarkable 16-year-old with an exceptional passion for the arts. For 8 years, she has trained in Bharatnatyam classical dance, mastering this beautiful traditional form with dedication and grace. Alongside her artistic pursuits, she has been committed to gymnastics since age 3, developing extraordinary strength, discipline, and poise.
+            </p>
+            <p className="text-lg md:text-xl text-purple-100 leading-relaxed">
+              Her journey is a testament to unwavering commitment, boundless creativity, and the pursuit of excellence. Today, we celebrate not just her Sweet Sixteen milestone, but the remarkable young woman she has become—a true artist, an athlete, and an inspiration to all who know her.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* JOURNEY - CHILDHOOD TO 16 */}
+      <section className="py-24 px-4 md:px-8 relative">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-5xl md:text-6xl font-playfair font-black text-center mb-16 gradient-text">
+            Journey: Childhood to 16
+          </h2>
+
+          <div className="relative">
+            {/* Main Photo Display */}
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-purple-900 mb-12">
+              <div className="relative w-full aspect-square md:aspect-video">
+                <img
+                  src={journeyPhotos[activeJourneyIndex].image}
+                  alt={journeyPhotos[activeJourneyIndex].title}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.target.style.backgroundColor = '#2d1b69';
+                  }}
+                />
+              </div>
+              
+              {/* Title overlay */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8">
+                <h3 className="text-3xl md:text-4xl font-playfair font-bold text-white">
+                  {journeyPhotos[activeJourneyIndex].title}
+                </h3>
+                <p className="text-amber-300 mt-2">Photo {activeJourneyIndex + 1} of {journeyPhotos.length}</p>
+              </div>
+            </div>
+
+            {/* Navigation */}
+            <div className="flex justify-center items-center gap-4 mb-12">
+              <button
+                onClick={prevJourney}
+                className="p-3 rounded-full bg-gradient-to-r from-amber-500 to-purple-600 hover:shadow-lg hover:shadow-amber-500/50 transition-all"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+
+              <div className="flex gap-2 flex-wrap justify-center">
+                {journeyPhotos.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setActiveJourneyIndex(i)}
+                    className={`h-3 rounded-full transition-all ${
+                      i === activeJourneyIndex ? 'bg-amber-400 w-8' : 'bg-purple-600 w-3'
+                    }`}
+                  />
+                ))}
+              </div>
+
+              <button
+                onClick={nextJourney}
+                className="p-3 rounded-full bg-gradient-to-r from-amber-500 to-purple-600 hover:shadow-lg hover:shadow-amber-500/50 transition-all"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
+            </div>
+
+            {/* Thumbnail strip */}
+            <div className="flex gap-2 overflow-x-auto pb-4">
+              {journeyPhotos.map((photo, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActiveJourneyIndex(i)}
+                  className={`flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-all ${
+                    i === activeJourneyIndex ? 'border-amber-400 scale-110' : 'border-purple-600 opacity-60 hover:opacity-100'
+                  }`}
+                >
+                  <img
+                    src={photo.image}
+                    alt={photo.title}
+                    className="w-full h-full object-cover"
+                  />
+                </button>
+              ))}
             </div>
           </div>
         </div>
@@ -178,6 +320,109 @@ const JahnviSweetSixteen = () => {
         </div>
       </section>
 
+      {/* 16-YEAR RECAP VIDEO */}
+      <section className="py-24 px-4 md:px-8 relative bg-gradient-to-b from-purple-900/20 to-transparent">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-5xl md:text-6xl font-playfair font-black text-center mb-12 gradient-text">
+            16-Year Recap
+          </h2>
+          
+          <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl shadow-purple-900">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/O_UhzXh9bPI"
+              title="Jahnvi 16-Year Recap"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full"
+            ></iframe>
+          </div>
+
+          <p className="text-center text-purple-300 mt-6 italic">A celebration of 16 beautiful years</p>
+        </div>
+      </section>
+
+      {/* PERFORMANCES */}
+      <section className="py-24 px-4 md:px-8 relative">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-5xl md:text-6xl font-playfair font-black text-center mb-20 gradient-text">
+            12 Dance Performances
+          </h2>
+
+          <div className="bg-gradient-to-br from-purple-800/30 to-purple-900/30 backdrop-blur-lg border border-purple-700/30 rounded-2xl p-12 mb-12">
+            <div className="text-center space-y-6">
+              <div>
+                <div className="text-7xl font-playfair font-black bg-gradient-to-r from-amber-300 to-pink-300 bg-clip-text text-transparent">
+                  {activePerformanceIndex + 1}/12
+                </div>
+              </div>
+              <div>
+                <h3 className="text-4xl font-playfair font-bold mb-2 text-white">
+                  {performances[activePerformanceIndex].title}
+                </h3>
+                <p className="text-lg text-amber-300 mb-2">{performances[activePerformanceIndex].performer}</p>
+                <p className="text-purple-300">{performances[activePerformanceIndex].type}</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Navigation */}
+          <div className="flex justify-center items-center gap-4">
+            <button
+              onClick={prevPerformance}
+              className="p-3 rounded-full bg-gradient-to-r from-amber-500 to-purple-600 hover:shadow-lg hover:shadow-amber-500/50 transition-all"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+
+            <div className="flex gap-1 max-w-2xl overflow-x-auto">
+              {performances.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActivePerformanceIndex(i)}
+                  className={`flex-shrink-0 h-2 rounded-full transition-all ${
+                    i === activePerformanceIndex ? 'bg-amber-400 w-8' : 'bg-purple-600 w-2'
+                  }`}
+                />
+              ))}
+            </div>
+
+            <button
+              onClick={nextPerformance}
+              className="p-3 rounded-full bg-gradient-to-r from-amber-500 to-purple-600 hover:shadow-lg hover:shadow-amber-500/50 transition-all"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* SIBLING MOMENTS VIDEO */}
+      <section className="py-24 px-4 md:px-8 relative bg-gradient-to-b from-purple-900/20 to-transparent">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-5xl md:text-6xl font-playfair font-black text-center mb-12 gradient-text">
+            Sibling Moments
+          </h2>
+          
+          <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl shadow-purple-900">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/96jLlKhkqZI"
+              title="Jahnvi & Mahaksh Sibling Moments"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full"
+            ></iframe>
+          </div>
+
+          <p className="text-center text-purple-300 mt-6 italic">Special moments with her beloved brother Mahaksh</p>
+        </div>
+      </section>
+
       {/* GALLERY */}
       <section className="py-24 px-4 md:px-8 relative">
         <div className="max-w-6xl mx-auto">
@@ -229,61 +474,6 @@ const JahnviSweetSixteen = () => {
 
             <button
               onClick={nextGallery}
-              className="p-3 rounded-full bg-gradient-to-r from-amber-500 to-purple-600 hover:shadow-lg hover:shadow-amber-500/50 transition-all"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* PERFORMANCES */}
-      <section className="py-24 px-4 md:px-8 relative">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-5xl md:text-6xl font-playfair font-black text-center mb-20 gradient-text">
-            12 Dance Performances
-          </h2>
-
-          <div className="bg-gradient-to-br from-purple-800/30 to-purple-900/30 backdrop-blur-lg border border-purple-700/30 rounded-2xl p-12 mb-12">
-            <div className="text-center space-y-6">
-              <div>
-                <div className="text-7xl font-playfair font-black bg-gradient-to-r from-amber-300 to-pink-300 bg-clip-text text-transparent">
-                  {activePerformanceIndex + 1}/12
-                </div>
-              </div>
-              <div>
-                <h3 className="text-4xl font-playfair font-bold mb-2 text-white">
-                  {performances[activePerformanceIndex].title}
-                </h3>
-                <p className="text-lg text-amber-300 mb-2">{performances[activePerformanceIndex].performer}</p>
-                <p className="text-purple-300">{performances[activePerformanceIndex].type}</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Navigation */}
-          <div className="flex justify-center items-center gap-4">
-            <button
-              onClick={prevPerformance}
-              className="p-3 rounded-full bg-gradient-to-r from-amber-500 to-purple-600 hover:shadow-lg hover:shadow-amber-500/50 transition-all"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
-
-            <div className="flex gap-1 max-w-2xl overflow-x-auto">
-              {performances.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setActivePerformanceIndex(i)}
-                  className={`flex-shrink-0 h-2 rounded-full transition-all ${
-                    i === activePerformanceIndex ? 'bg-amber-400 w-8' : 'bg-purple-600 w-2'
-                  }`}
-                />
-              ))}
-            </div>
-
-            <button
-              onClick={nextPerformance}
               className="p-3 rounded-full bg-gradient-to-r from-amber-500 to-purple-600 hover:shadow-lg hover:shadow-amber-500/50 transition-all"
             >
               <ChevronRight className="w-6 h-6" />
