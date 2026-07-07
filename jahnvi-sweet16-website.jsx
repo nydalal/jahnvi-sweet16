@@ -214,17 +214,17 @@ const JahnviSweetSixteen = () => {
 
           <div className="relative">
             {/* Main Photo Display */}
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-purple-900 mb-12 bg-gradient-to-br from-purple-800/30 to-purple-900/30 border border-purple-700/30">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-purple-900 mb-12 bg-gradient-to-br from-purple-800/30 to-purple-900/30 border border-purple-700/30 flex items-center justify-center min-h-96">
               {journeyPhotos[activeJourneyIndex].image ? (
-                <div className="relative w-full aspect-square md:aspect-video">
+                <div className="relative w-full h-full flex items-center justify-center p-4 md:p-8">
                   <img
                     src={journeyPhotos[activeJourneyIndex].image}
                     alt={journeyPhotos[activeJourneyIndex].title}
-                    className="w-full h-full object-cover"
+                    className="max-w-full max-h-96 md:max-h-full object-contain rounded-lg"
                   />
                 </div>
               ) : (
-                <div className="w-full aspect-square md:aspect-video flex items-center justify-center">
+                <div className="w-full h-96 flex items-center justify-center">
                   <div className="text-center">
                     <div className="text-6xl mb-4">📸</div>
                     <p className="text-purple-300 text-lg">Photo {activeJourneyIndex + 1}: {journeyPhotos[activeJourneyIndex].title}</p>
