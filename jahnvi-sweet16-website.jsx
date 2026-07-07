@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Sparkles, Heart, Play } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Sparkles, Heart } from 'lucide-react';
 
 const JahnviSweetSixteen = () => {
   const [activeGalleryIndex, setActiveGalleryIndex] = useState(0);
@@ -14,27 +14,36 @@ const JahnviSweetSixteen = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Journey photos - Childhood to 16
+  // Journey photos - Childhood to 16 years
   const journeyPhotos = [
-    { id: 1, title: 'Early Years', image: 'https://drive.google.com/uc?export=view&id=1CggcofhgDAA1sqeZ08qLnti-tj0uKkju' },
-    { id: 2, title: 'Growing Up', image: 'https://drive.google.com/uc?export=view&id=1SQaEnFqxElsab5Hxxtv0054iisJnWwC1' },
-    { id: 3, title: 'Artistic Journey', image: 'https://drive.google.com/uc?export=view&id=1ACkj4Zt6nAzoAkjg4LJ_nZUTLW3OV4vu' },
-    { id: 4, title: 'Strength & Grace', image: 'https://drive.google.com/uc?export=view&id=1Zw7eFCOUnOmDfzepbqe1stxFDIjSZKPk' },
-    { id: 5, title: 'Blossoming', image: 'https://drive.google.com/uc?export=view&id=1-F9VW2mE2BsAF-rK9iXUXCstMfICXDVS' },
-    { id: 6, title: 'Teen Years', image: 'https://drive.google.com/uc?export=view&id=157_zv5QKJOpc0NffcwCWY7_Cn5OtIlbQ' },
-    { id: 7, title: 'Confident & Radiant', image: 'https://drive.google.com/uc?export=view&id=1lkzTAdFYNnjhpoRXt-JPtckhXw4v93gx' },
-    { id: 8, title: 'The Dancer', image: 'https://drive.google.com/uc?export=view&id=1uzzwtvHEW5n2BAlQx2WaOgUaxkZ_7DqY' },
-    { id: 9, title: 'Milestones', image: 'https://drive.google.com/uc?export=view&id=1mtqlM13bsqUS9EXqhTTOm4oZsbxkREQx' },
-    { id: 10, title: 'Nearly There', image: 'https://drive.google.com/uc?export=view&id=1qjVdrsuEsg-lPwzFASnHAdYu9uxN5VE7' },
-    { id: 11, title: 'Sweet 16 Beauty', image: 'https://drive.google.com/uc?export=view&id=1phTSCruHFOgvlq6EgNIV35wJDZl6HbQ3' },
-    { id: 12, title: 'Ready to Shine', image: 'https://drive.google.com/uc?export=view&id=1eSP3IdgNGNLtIJxEL2TN1TLhlKQim7xp' }
+    { id: 1, title: 'Early Years', image: 'https://res.cloudinary.com/ygcsdi8i/image/upload/v1783269568/Jahnvi-2010-1_dxojsb.jpg' },
+    { id: 2, title: 'Growing Up', image: 'https://res.cloudinary.com/ygcsdi8i/image/upload/v1783269565/Jahnvi-2016-8_jyuh28.jpg' },
+    { id: 3, title: 'Artistic Journey', image: 'https://res.cloudinary.com/ygcsdi8i/image/upload/v1783396657/BNAT-1_lbjcfa.jpg' },
+    { id: 4, title: 'Strength & Grace', image: 'https://res.cloudinary.com/ygcsdi8i/image/upload/v1783396683/Indian-4_tvauz5.jpg' },
+    { id: 5, title: 'Blossoming', image: 'https://res.cloudinary.com/ygcsdi8i/image/upload/v1783396694/dance-2_u21zrn.jpg' },
+    { id: 6, title: 'Teen Years', image: 'https://res.cloudinary.com/ygcsdi8i/image/upload/v1783396818/Jahnvi-11by14-2_tdcpx5.jpg' },
+    { id: 7, title: 'Confident & Radiant', image: 'https://res.cloudinary.com/ygcsdi8i/image/upload/v1783396827/Jahnvi-11by14-1_doalxq.jpg' },
+    { id: 8, title: 'The Dancer', image: 'https://res.cloudinary.com/ygcsdi8i/image/upload/v1783397041/BNAT-13_so52rz.jpg' },
+    { id: 9, title: 'Milestones', image: 'https://res.cloudinary.com/ygcsdi8i/image/upload/v1783396831/Jahnvi-11by14-3_yczd17.jpg' },
+    { id: 10, title: 'Nearly There', image: 'https://res.cloudinary.com/ygcsdi8i/image/upload/v1783397102/virginia-3_wlfbve.jpg' },
+    { id: 11, title: 'Sweet 16 Beauty', image: 'https://res.cloudinary.com/ygcsdi8i/image/upload/v1783397224/DSC01525_oki02v.jpg' },
+    { id: 12, title: 'Ready to Shine', image: 'https://res.cloudinary.com/ygcsdi8i/image/upload/v1783397286/DSC01532_fy596z.jpg' }
   ];
 
-  const galleryPhotos = Array.from({ length: 20 }, (_, i) => ({
-    id: i,
-    title: `Memory ${i + 1}`,
-    gradient: `linear-gradient(135deg, hsl(${270 + i * 8}, 70%, 50%), hsl(${300 + i * 6}, 65%, 45%))`,
-  }));
+  const galleryPhotos = [
+    { id: 1, image: 'https://res.cloudinary.com/ygcsdi8i/image/upload/v1783445498/DSC01532_1_jo5gak.jpg' },
+    { id: 2, image: 'https://res.cloudinary.com/ygcsdi8i/image/upload/v1783445496/DSC01440_qpm3fx.jpg' },
+    { id: 3, image: 'https://res.cloudinary.com/ygcsdi8i/image/upload/v1783445495/DSC01281_jfaujk.jpg' },
+    { id: 4, image: 'https://res.cloudinary.com/ygcsdi8i/image/upload/v1783445495/DSC01454_mmtfds.jpg' },
+    { id: 5, image: 'https://res.cloudinary.com/ygcsdi8i/image/upload/v1783445494/DSC01362_acpvnb.jpg' },
+    { id: 6, image: 'https://res.cloudinary.com/ygcsdi8i/image/upload/v1783445492/DSC01282_t0dfb1.jpg' },
+    { id: 7, image: 'https://res.cloudinary.com/ygcsdi8i/image/upload/v1783445492/DSC01550_fvuhqx.jpg' },
+    { id: 8, image: 'https://res.cloudinary.com/ygcsdi8i/image/upload/v1783445491/DSC01443_cklwej.jpg' },
+    { id: 9, image: 'https://res.cloudinary.com/ygcsdi8i/image/upload/v1783445489/DSC01441_ajmdel.jpg' },
+    { id: 10, image: 'https://res.cloudinary.com/ygcsdi8i/image/upload/v1783445489/DSC01431_2_nwlgz9.jpg' },
+    { id: 11, image: 'https://res.cloudinary.com/ygcsdi8i/image/upload/v1783445488/DSC01256_vvsxnc.jpg' },
+    { id: 12, image: 'https://res.cloudinary.com/ygcsdi8i/image/upload/v1783445487/DSC01525_1_mb5tw9.jpg' }
+  ];
 
   const performances = [
     { id: 1, title: 'Opening Dance', performer: 'Jahnvi & Friends', type: '🎭 Bollywood' },
@@ -52,14 +61,15 @@ const JahnviSweetSixteen = () => {
   ];
 
   const timelineEvents = [
-    { time: '6:00 PM', title: 'Guest Arrival', emoji: '🎉' },
-    { time: '6:30 PM', title: 'Avani & Nishit Entry', emoji: '👑' },
+    { time: '5:30 PM', title: 'Guest Arrival', emoji: '🎉' },
+    { time: '6:30 PM', title: 'Event Starts - Avani & Nishit Entry', emoji: '👑' },
     { time: '6:45 PM', title: 'Mahaksh & Jahnvi Entry', emoji: '⭐' },
+    { time: '6:50 PM', title: "Mahaksh's Speech", emoji: '💬' },
     { time: '7:00 PM', title: '12 Dance Performances', emoji: '💃' },
-    { time: '8:00 PM', title: '8 Heartfelt Speeches', emoji: '💬' },
-    { time: '8:45 PM', title: "Father's Emotional Speech", emoji: '❤️' },
-    { time: '9:00 PM', title: 'Cake Cutting', emoji: '🎂' },
-    { time: '9:30 PM', title: 'Celebration Continues', emoji: '✨' }
+    { time: '8:00 PM', title: 'Heartfelt Speeches', emoji: '❤️' },
+    { time: '8:30 PM', title: 'Cake Cutting', emoji: '🎂' },
+    { time: '8:40 PM', title: "Avani & Nishit's Speech", emoji: '👨‍👩‍👧' },
+    { time: '9:00 PM', title: 'Dinner & Celebrations Continue', emoji: '✨' }
   ];
 
   const testimonials = [
@@ -134,6 +144,25 @@ const JahnviSweetSixteen = () => {
         </div>
       </section>
 
+      {/* FATHER'S REFLECTION - GUJARATI OPENING */}
+      <section className="py-24 px-4 md:px-8 relative bg-gradient-to-b from-purple-900/20 to-transparent">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-playfair font-black text-center mb-12 gradient-text">
+            એક પિતાનું પ્રતિબિંબ
+          </h2>
+          
+          <div className="bg-gradient-to-br from-purple-800/30 to-purple-900/30 backdrop-blur-lg border border-purple-700/30 rounded-2xl p-8 md:p-12">
+            <p className="text-lg md:text-xl text-purple-100 leading-relaxed text-center italic font-light">
+              "બની ગુમરાહ અટવાતા જીવનની વાત કરવી છે,
+              <br />ખીલ્યાની સાથે જ સુગંધિત પૂષ્પની વાત કરવી છે,
+              <br />અથાગ મેહનતની સાથે જેણે પ્રેમનો ધોધ વરસાવ્યો છે,
+              <br />તેવી વ્હાલસોયી દીકરી જાહન્વી ના સોળ વરસ ની વાત કરવી છે।"
+            </p>
+            <p className="text-center text-amber-300 mt-6 text-sm">~ નિશિત દલાલ</p>
+          </div>
+        </div>
+      </section>
+
       {/* TRAILER VIDEO */}
       <section className="py-24 px-4 md:px-8 relative bg-gradient-to-b from-purple-900/20 to-transparent">
         <div className="max-w-4xl mx-auto">
@@ -185,17 +214,24 @@ const JahnviSweetSixteen = () => {
 
           <div className="relative">
             {/* Main Photo Display */}
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-purple-900 mb-12">
-              <div className="relative w-full aspect-square md:aspect-video">
-                <img
-                  src={journeyPhotos[activeJourneyIndex].image}
-                  alt={journeyPhotos[activeJourneyIndex].title}
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    e.target.style.backgroundColor = '#2d1b69';
-                  }}
-                />
-              </div>
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-purple-900 mb-12 bg-gradient-to-br from-purple-800/30 to-purple-900/30 border border-purple-700/30">
+              {journeyPhotos[activeJourneyIndex].image ? (
+                <div className="relative w-full aspect-square md:aspect-video">
+                  <img
+                    src={journeyPhotos[activeJourneyIndex].image}
+                    alt={journeyPhotos[activeJourneyIndex].title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ) : (
+                <div className="w-full aspect-square md:aspect-video flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="text-6xl mb-4">📸</div>
+                    <p className="text-purple-300 text-lg">Photo {activeJourneyIndex + 1}: {journeyPhotos[activeJourneyIndex].title}</p>
+                    <p className="text-purple-400 text-sm mt-2">(Ready for photo URL)</p>
+                  </div>
+                </div>
+              )}
               
               {/* Title overlay */}
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8">
@@ -243,13 +279,17 @@ const JahnviSweetSixteen = () => {
                   onClick={() => setActiveJourneyIndex(i)}
                   className={`flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-all ${
                     i === activeJourneyIndex ? 'border-amber-400 scale-110' : 'border-purple-600 opacity-60 hover:opacity-100'
-                  }`}
+                  } bg-gradient-to-br from-purple-600 to-purple-800 flex items-center justify-center`}
                 >
-                  <img
-                    src={photo.image}
-                    alt={photo.title}
-                    className="w-full h-full object-cover"
-                  />
+                  {photo.image ? (
+                    <img
+                      src={photo.image}
+                      alt={photo.title}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <span className="text-purple-300 text-2xl">📸</span>
+                  )}
                 </button>
               ))}
             </div>
@@ -434,18 +474,13 @@ const JahnviSweetSixteen = () => {
           <div className="mb-12">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {galleryPhotos.slice(activeGalleryIndex * 4, (activeGalleryIndex + 1) * 4).map((photo) => (
-                <div key={photo.id} className="group relative aspect-square rounded-xl overflow-hidden cursor-pointer">
-                  <div
-                    className="w-full h-full group-hover:scale-110 transition-transform duration-500"
-                    style={{ backgroundImage: photo.gradient, backgroundSize: 'cover' }}
-                  >
-                    <div className="w-full h-full bg-black/30 group-hover:bg-black/10 transition-all flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="text-3xl mb-2">📸</div>
-                        <p className="text-white text-sm">{photo.title}</p>
-                      </div>
-                    </div>
-                  </div>
+                <div key={photo.id} className="group relative aspect-square rounded-xl overflow-hidden cursor-pointer shadow-lg">
+                  <img
+                    src={photo.image}
+                    alt={`Memory ${photo.id}`}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
                 </div>
               ))}
             </div>
@@ -479,6 +514,32 @@ const JahnviSweetSixteen = () => {
               <ChevronRight className="w-6 h-6" />
             </button>
           </div>
+        </div>
+      </section>
+
+      {/* GOOGLE PHOTOS LINK */}
+      <section className="py-24 px-4 md:px-8 relative bg-gradient-to-b from-purple-900/20 to-transparent">
+        <div className="max-w-4xl mx-auto text-center">
+          <h3 className="text-3xl md:text-4xl font-playfair font-black mb-6 gradient-text">
+            View All Photos
+          </h3>
+          
+          <p className="text-lg text-purple-200 mb-8">
+            Browse all 200+ photos from the celebration:
+          </p>
+
+          <a
+            href="https://drive.google.com/drive/folders/1RX4MYp3QnfsbpGXi0VT_WRKKwEpAYz16?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-purple-950 font-bold rounded-lg hover:shadow-lg hover:shadow-amber-500/50 transition-all duration-300 drop-shadow-lg"
+          >
+            📸 Open Full Google Photos Gallery
+          </a>
+
+          <p className="text-purple-400 mt-6 text-sm">
+            Click to view all 200+ professional photos from the evening
+          </p>
         </div>
       </section>
 
@@ -537,11 +598,11 @@ const JahnviSweetSixteen = () => {
           </p>
 
           <div className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl mb-12">
-            <p className="text-purple-200 mb-4">
-              [Your meaningful quote will appear here]
+            <p className="text-purple-100 mb-4 text-lg italic font-light leading-relaxed">
+              "ભગવદ્ ગીતામાં જેટલું મહત્વ ભક્તિયોગનું છે, એટલું જ મહત્વ મારી જીવનગીતામાં "દીકરીયોગ"નું છે।"
             </p>
             <p className="text-sm text-purple-400 italic">
-              ~ With love and gratitude
+              ~ નિશિત દલાલ
             </p>
           </div>
 
