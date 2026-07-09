@@ -46,18 +46,18 @@ const JahnviSweetSixteen = () => {
   ];
 
   const performances = [
-    { id: 1, title: 'Opening Dance', performer: 'Jahnvi & Friends', type: '🎭 Bollywood' },
-    { id: 2, title: 'Classical Performance', performer: 'Jahnvi', type: '🪔 Bharatnatyam' },
-    { id: 3, title: 'Group Ensemble', performer: '12 Dancers', type: '✨ Fusion' },
-    { id: 4, title: 'Surprise Performance', performer: 'Family', type: '🎭 Bollywood' },
-    { id: 5, title: 'Solo Dance', performer: 'Jahnvi', type: '💃 Contemporary' },
-    { id: 6, title: 'Group Performance', performer: 'Friends', type: '🎭 Bollywood' },
-    { id: 7, title: 'Classical Ensemble', performer: 'Dancers', type: '🪔 Bharatnatyam' },
-    { id: 8, title: 'Finale Performance', performer: 'All', type: '✨ Fusion' },
-    { id: 9, title: 'Group Routine', performer: 'Friends', type: '🎭 Bollywood' },
-    { id: 10, title: 'Classical Solo', performer: 'Jahnvi', type: '🪔 Bharatnatyam' },
-    { id: 11, title: 'Energetic Bollywood', performer: 'Dancers', type: '🎭 Bollywood' },
-    { id: 12, title: 'Grand Finale', performer: 'All Performers', type: '✨ Fusion' }
+    { id: 1, title: 'Opening Dance', performer: 'Avani & Nishit', type: '🎬 Bollywood Fiesta' },
+    { id: 2, title: 'Avani & Sakhi Group Dance', performer: 'Avani & Friends', type: '👭 Jamkudi Magic' },
+    { id: 3, title: 'BAYVP Couple Dance - 1', performer: 'BAYVP Dancers', type: '💃 Divine Duet' },
+    { id: 4, title: 'Bollywood Couple Dance - 2', performer: 'Dance Couple', type: '💃 Bollywood Romance' },
+    { id: 5, title: 'Bollywood Couple Dance - 3', performer: 'Dance Couple', type: '💃 Shimmer & Shine' },
+    { id: 6, title: 'BAYVP Fab-4 Performance', performer: 'BAYVP Stars', type: '✨ Quad Magic' },
+    { id: 7, title: 'Jahnvi School Friends - 1', performer: 'School Friends', type: '👯 Friendship Beats' },
+    { id: 8, title: 'Jahnvi School Friends - 2', performer: 'School Friends', type: '👯 Squad Goals' },
+    { id: 9, title: 'Avani Solo Performance', performer: 'Avani', type: '🌟 Solo Spotlight' },
+    { id: 10, title: 'Bollywood Couple Dance - 4', performer: 'Dance Couple', type: '💃 Bollywood Bliss' },
+    { id: 11, title: 'Bollywood Couple Dance - 5', performer: 'Dance Couple', type: '💃 Groove Paradise' },
+    { id: 12, title: 'Grand Finale', performer: 'Avani & Nishit', type: '👑 Spectacular Finale' }
   ];
 
   const timelineEvents = [
@@ -529,7 +529,7 @@ const JahnviSweetSixteen = () => {
           </p>
 
           <a
-            href="https://drive.google.com/drive/folders/1RX4MYp3QnfsbpGXi0VT_WRKKwEpAYz16?usp=sharing"
+            href="https://photos.app.goo.gl/SPD47qjZmcgvKLxq7"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-purple-950 font-bold rounded-lg hover:shadow-lg hover:shadow-amber-500/50 transition-all duration-300 drop-shadow-lg"
